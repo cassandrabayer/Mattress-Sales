@@ -13,3 +13,50 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git add .
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git commit -m "commenc[K[K[K[K[K[K[Kinit commit"
+[master (root-commit) 4c06379] init commit
+ 11 files changed, 218 insertions(+)
+ create mode 100644 .Rproj.user/79FC296B/console06/4B26E991
+ create mode 100644 .Rproj.user/79FC296B/console06/INDEX001
+ create mode 100644 .Rproj.user/79FC296B/sources/prop/9D63211
+ create mode 100644 .Rproj.user/79FC296B/sources/prop/INDEX
+ create mode 100644 .Rproj.user/79FC296B/sources/s-B6D335F0/D5EB7755
+ create mode 100644 .Rproj.user/79FC296B/sources/s-B6D335F0/D5EB7755-contents
+ create mode 100644 .Rproj.user/79FC296B/sources/s-B6D335F0/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 Casper.Rproj
+ create mode 100644 Controller.R
+ create mode 100644 XLS_takehome_NA.xlsx
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ [KCassandras-Air:Casper cassandrabayer$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/79FC296B/console06/4B26E991[m
+	[31mmodified:   .Rproj.user/79FC296B/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/prop/9D63211[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/s-B6D335F0/D5EB7755[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/s-B6D335F0/D5EB7755-contents[m
+	[31mmodified:   Controller.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.Rproj.user/79FC296B/console06/4B26E991.env[m
+	[31m.Rproj.user/79FC296B/sources/prop/C75C4F0D[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/6C63BFDB-contents[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/78728EB3[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/78728EB3-contents[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/9FDB7D94[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/9FDB7D94-contents[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/A916C2EB[m
+	[31m.Rproj.user/79FC296B/sources/s-B6D335F0/A916C2EB-contents[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/[m
+	[31m.Rproj.user/shared/notebooks/paths[m
+	[31mSales Trends.Rmd[m
+	[31m~$XLS_takehome_NA.xlsx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git add .

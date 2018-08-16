@@ -1,0 +1,41 @@
+---
+title: "Sales Trends"
+author: "Cassandra Bayer"
+date: "8/15/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("Controller.R")
+```
+
+# Initial Processing
+## Load data and clean it up
+
+```{r cars}
+orders <- data.table(read.xlsx2(file = "XLS_takehome_NA.xlsx", 
+                               sheetName = "Orders",
+                               stringsAsFactors = F,
+                               colClasses = c("Date", "Date", "character", "numeric")))
+
+orders <- orders[, 1:4][order(dateordered)]
+sapply(orders, class)
+
+returnRate <- orders[, .(returnRate = sum(orders[orderstatus == "returned"], na.rm = T)/
+                           sum(orders[orderstatus == "complete"], na.rm = T)),
+       by = month(dateordered)]
+```
+
+Let's cut it a different way: of the orders that got placed by month, how many were returned at a later date
+```{r}
+
+orders[, diffMonth := 0]
+orders[month(dateordered) != month(datereturned), diffMonth := 1]
+byMonth <- orders[, .(complete = sum(orders[orderstatus == "complete"]),
+                      returned = sum(orders[orderstatus == "returned"]))]
+```
+
+## Questions
+Exercise 1: Crunch the data and tell us whether our return rate is trending up or down. Additional insights are welcome, but not required
+We measure our metrics by month, so please provide the answer at a month (as opposed to week or day) level (e.g., return rate increased in September but decreased in October)
