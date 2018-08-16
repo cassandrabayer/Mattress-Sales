@@ -11,7 +11,7 @@ source("Controller.R")
 ```
 
 # Initial Processing
-## Load data and clean it up
+## Load data, clean it up, and do some brief analytics
 
 ```{r cars}
 orders <- data.table(read.xlsx2(file = "XLS_takehome_NA.xlsx", 
@@ -22,20 +22,46 @@ orders <- data.table(read.xlsx2(file = "XLS_takehome_NA.xlsx",
 orders <- orders[, 1:4][order(dateordered)]
 sapply(orders, class)
 
+summary(orders)
+plot()
+```
+
+# Aggregation I
+
+```{r}
 returnRate <- orders[, .(returnRate = sum(orders[orderstatus == "returned"], na.rm = T)/
                            sum(orders[orderstatus == "complete"], na.rm = T)),
        by = month(dateordered)]
+summary(returnRate)
+
 ```
+
+# Aggregation II
+As a gut check, I want to aggregate it in a different 
+
+```{r}
+returnsByMonth <- orders[, .(returns = sum(orders[orderstatus == "returned"], na.rm = T)),
+       by = month(datereturned)]
+ordersByMonth <- orders[, .(orders = sum(orders[orderstatus == "complete"], na.rm = T)),
+       by = month(dateordered)]
+setkey(returnsByMonth, month)
+setkey(ordersByMonth, month)
+returnsByMonth <- ordersByMonth[returnsByMonth]
+returnsByMonth[!is.na(month), returnRate := returns/orders, by = month]
+returnsByMonth <- returnsByMonth[!is.na(month)]
+
+```
+
 
 Let's cut it a different way: of the orders that got placed by month, how many were returned at a later date
 ```{r}
-
-orders[, diffMonth := 0]
-orders[month(dateordered) != month(datereturned), diffMonth := 1]
-byMonth <- orders[, .(complete = sum(orders[orderstatus == "complete"]),
-                      returned = sum(orders[orderstatus == "returned"]))]
 ```
 
 ## Questions
 Exercise 1: Crunch the data and tell us whether our return rate is trending up or down. Additional insights are welcome, but not required
 We measure our metrics by month, so please provide the answer at a month (as opposed to week or day) level (e.g., return rate increased in September but decreased in October)
+
+```{r}
+sqldf("select * from orders limit 10;")
+```
+

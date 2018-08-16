@@ -11,6 +11,7 @@ library(tidyr)
 library(tidyverse)
 library(xlsx)
 library(XLConnect)
+library(sqldf)
 
 # visualization packages
 library(ggplot2)
