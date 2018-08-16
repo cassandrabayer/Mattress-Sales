@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1534379018483.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "106973719",
+    "id" : "D5EB7755",
+    "lastKnownWriteTime" : 1534379091,
+    "last_content_update" : 1534379092008,
+    "path" : "~/Desktop/Casper/Controller.R",
+    "project_path" : "Controller.R",
+    "properties" : {
+        "cursorPosition" : "3,43",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
