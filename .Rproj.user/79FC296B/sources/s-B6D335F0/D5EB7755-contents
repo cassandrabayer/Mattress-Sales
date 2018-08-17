@@ -12,6 +12,7 @@ library(tidyverse)
 library(xlsx)
 library(XLConnect)
 library(sqldf)
+library(lubridate)
 
 # visualization packages
 library(ggplot2)

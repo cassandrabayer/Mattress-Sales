@@ -13,47 +13,64 @@ source("Controller.R")
 # Initial Processing
 ## Load data, clean it up, and do some brief analytics
 
-```{r cars}
+```{r}
 orders <- data.table(read.xlsx2(file = "XLS_takehome_NA.xlsx", 
-                               sheetName = "Orders",
-                               stringsAsFactors = F,
-                               colClasses = c("Date", "Date", "character", "numeric")))
+                                sheetName = "Orders",
+                                stringsAsFactors = F,
+                                colClasses = c("Date", "Date", "character", "numeric")))
 
 orders <- orders[, 1:4][order(dateordered)]
-sapply(orders, class)
+orders[, month := month(dateordered)]
+orders$monthName <- month.name[ orders$month]
 
+sapply(orders, class)
 summary(orders)
-plot()
 ```
 
 # Aggregation I
 
+
 ```{r}
 returnRate <- orders[, .(returnRate = sum(orders[orderstatus == "returned"], na.rm = T)/
-                           sum(orders[orderstatus == "complete"], na.rm = T)),
-       by = month(dateordered)]
+                           sum(orders[orderstatus == "complete"], na.rm = T),
+                         orders = sum(orders[orderstatus == "complete"], na.rm = T)),
+                     by = .(monthName, month)]
+returnRate[, returnRate := round(returnRate,2)]
 summary(returnRate)
+
+plot_ly(data = returnRate, 
+        x = ~monthName, 
+        y =  ~returnRate, 
+        mode = 'lines', 
+        colors = "Set1",)
 
 ```
 
 # Aggregation II
-As a gut check, I want to aggregate it in a different 
 
+As a gut check, I want to aggregate it in a different way. 
 ```{r}
 returnsByMonth <- orders[, .(returns = sum(orders[orderstatus == "returned"], na.rm = T)),
-       by = month(datereturned)]
+                         by = .(month(datereturned), monthName)]
+
 ordersByMonth <- orders[, .(orders = sum(orders[orderstatus == "complete"], na.rm = T)),
-       by = month(dateordered)]
+                        by = .(month(dateordered), monthName)]
+
 setkey(returnsByMonth, month)
 setkey(ordersByMonth, month)
 returnsByMonth <- ordersByMonth[returnsByMonth]
 returnsByMonth[!is.na(month), returnRate := returns/orders, by = month]
 returnsByMonth <- returnsByMonth[!is.na(month)]
 
+returnsByMonth <- returnsByMonth[c(2:nrow(returnsByMonth), 1)]
+
+plot_ly(returnsByMonth, x = ~monthName) %>%
+  add_trace(y = ~orders, name = 'Orders',mode = 'lines') %>%
+  add_trace(y = ~returns, name = 'Returns', mode = 'lines') 
 ```
 
 
-Let's cut it a different way: of the orders that got placed by month, how many were returned at a later date
+Plots
 ```{r}
 ```
 
@@ -61,7 +78,13 @@ Let's cut it a different way: of the orders that got placed by month, how many w
 Exercise 1: Crunch the data and tell us whether our return rate is trending up or down. Additional insights are welcome, but not required
 We measure our metrics by month, so please provide the answer at a month (as opposed to week or day) level (e.g., return rate increased in September but decreased in October)
 
+Exercise 2: Write the SQL code to produce number of completed orders by date (name of source data table is 'casper_orders')
+
+
 ```{r}
-sqldf("select * from orders limit 10;")
+casper_orders <- orders
+sqldf("select sum(orders) as totalOrders, dateordered from casper_orders where orderstatus = 'complete' group by dateordered;")
+sqldf("select sum(orders) as totalOrders, EXTRACT(month FROM dateordered) as month from casper_orders where orderstatus = 'complete' group by month;")
+sqldf("select substr(dateordered, 6, 7), dateordered from casper_orders limit 10;")
 ```
 

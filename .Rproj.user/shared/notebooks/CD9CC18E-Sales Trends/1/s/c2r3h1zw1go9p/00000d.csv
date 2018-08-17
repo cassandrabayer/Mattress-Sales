@@ -1,0 +1,5 @@
+"0","sqldf(""select sum(orders) as totalOrders, EXTRACT(month from dateordered) as month from casper_orders where orderstatus = 'complete' group by month;"")
+"
+"2","Error in rsqlite_send_query(conn@ptr, statement) : 
+  near ""from"": syntax error
+"
