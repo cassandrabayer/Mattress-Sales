@@ -265,3 +265,28 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git add .
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git commit -m "finished and knitting"
+[master ad6e822] finished and knitting
+ 28 files changed, 336 insertions(+), 212 deletions(-)
+ rewrite .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/79FC296BB6D335F0/chunks.json (75%)
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000d.csv
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000e.error
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/000033.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/000034.error
+ rename .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/{00002f.csv => 000037.csv} (54%)
+ rename .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/{000030.html => 000038.html} (91%)
+ rename .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/{000030.json => 000038.json} (100%)
+ rename .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/{000030.metadata => 000038.metadata} (100%)
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001d.csv
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.html
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.json
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.metadata
+ rewrite .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/chunks.json (75%)
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000e.csv
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.html
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.json
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00001e.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00001e.rdf
+ create mode 100644 Sales_Trends.Rmd
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ g[K
