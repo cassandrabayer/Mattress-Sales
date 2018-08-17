@@ -172,3 +172,96 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git add .
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git commit -m "just need to add analysis"
+[master f1d4e79] just need to add analysis
+ 51 files changed, 14310 insertions(+), 45 deletions(-)
+ rewrite .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/79FC296BB6D335F0/chunks.json (76%)
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000d.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000e.error
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000004.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000004.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/00002f.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.html
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.json
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8lzkba76y21h/000002.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8lzkba76y21h/000002.rdf
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/000002.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/000002.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001d.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.html
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.json
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.metadata
+ rewrite .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/chunks.json (76%)
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000d.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000d.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000e.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.html
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.json
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cus1ida57csh2/000006.csv
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/crosstalk-1.0.0/css/crosstalk.css
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/crosstalk-1.0.0/js/crosstalk.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/crosstalk-1.0.0/js/crosstalk.js.map
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/crosstalk-1.0.0/js/crosstalk.min.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/crosstalk-1.0.0/js/crosstalk.min.js.map
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/htmlwidgets-0.9/htmlwidgets.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/jquery-1.11.3/jquery-AUTHORS.txt
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/jquery-1.11.3/jquery.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/jquery-1.11.3/jquery.min.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/jquery-1.11.3/jquery.min.map
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/plotly-binding-4.7.1/plotly.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/plotlyjs-1.29.2/LICENSE
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/plotlyjs-1.29.2/plotly-htmlwidgets.css
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/plotlyjs-1.29.2/plotly-latest.min.js
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/typedarray-0.1/LICENSE
+ create mode 100644 .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/lib/typedarray-0.1/typedarray.min.js
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git push origin Casper
+error: src refspec Casper does not match any.
+error: failed to push some refs to 'origin'
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ [KCassandras-Air:Casper cassandrabayer$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/79FC296B/console06/4B26E991[m
+	[31mmodified:   .Rproj.user/79FC296B/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/prop/C75C4F0D[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/s-B6D335F0/9FDB7D94[m
+	[31mmodified:   .Rproj.user/79FC296B/sources/s-B6D335F0/9FDB7D94-contents[m
+	[31mmodified:   .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/79FC296BB6D335F0/chunks.json[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000d.csv[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/00000e.error[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/00002f.csv[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.html[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.json[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000030.metadata[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001d.csv[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.html[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.json[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cc217th0qnwgp/00001e.metadata[m
+	[31mmodified:   .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/chunks.json[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000e.csv[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.html[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.json[m
+	[31mdeleted:    .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00000f.metadata[m
+	[31mmodified:   .Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cus1ida57csh2/000006.csv[m
+	[31mmodified:   Sales Trends.Rmd[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/000033.csv[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c2r3h1zw1go9p/000034.error[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000037.csv[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000038.html[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000038.json[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/c8ebt3bd06126/000038.metadata[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00001e.metadata[m
+	[31m.Rproj.user/shared/notebooks/CD9CC18E-Sales Trends/1/s/cn2r4sme27ubu/00001e.rdf[m
+	[31mSales_Trends.Rmd[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/Desktop/CasperCassandras-Air:Casper cassandrabayer$ git add .

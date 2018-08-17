@@ -1,0 +1,8 @@
+"0","sqldf(""SELECT SUM(orders) as totalOrders, 
+      SUBSTR(CONVERT(datetime,dateordered, 111),5,6) as month 
+      FROM casper_orders WHERE orderstatus = 'complete' 
+      GROUP BY month;"")
+"
+"2","Error in rsqlite_send_query(conn@ptr, statement) : 
+  no such column: datetime
+"

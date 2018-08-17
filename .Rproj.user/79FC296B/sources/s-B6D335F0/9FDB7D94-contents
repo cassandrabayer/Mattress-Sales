@@ -12,79 +12,79 @@ source("Controller.R")
 
 # Initial Processing
 ## Load data, clean it up, and do some brief analytics
-
+As a first pass, I load the data, drop the null columns, extra the month adn the month name, and do a quick glance of the data. I see that the classes of the data were passed into R as intended, and the distribution of the data seems fairly normal.
 ```{r}
 orders <- data.table(read.xlsx2(file = "XLS_takehome_NA.xlsx", 
                                 sheetName = "Orders",
                                 stringsAsFactors = F,
                                 colClasses = c("Date", "Date", "character", "numeric")))
 
+## clean up data
 orders <- orders[, 1:4][order(dateordered)]
 orders[, month := month(dateordered)]
 orders$monthName <- month.name[ orders$month]
 
+## descriptives
 sapply(orders, class)
 summary(orders)
 ```
 
 # Aggregation I
-
-
+At first glance, one may think that the rate of returns is rising-- the sheer number of returns has increased over time. However in order to answer the first question, I did an aggregation to get the return rate by month. I did so by calculating the number of orders returned per the number of orders placed by the month in which that order was placed. According to these trends, *the return rate has been steadily falling since August.*
+<br>
+I believe that the return rate calculated here is indicative of how the company was performing or the quality of the mattressat the the time of sale.
+The plot, despite being out of order, shows the return rates over time. 
 ```{r}
-returnRate <- orders[, .(returnRate = sum(orders[orderstatus == "returned"], na.rm = T)/
-                           sum(orders[orderstatus == "complete"], na.rm = T),
-                         orders = sum(orders[orderstatus == "complete"], na.rm = T)),
+returnRate <- orders[, .( orders = sum(orders[orderstatus == "complete"], na.rm = T),
+                          returns = sum(orders[orderstatus == "returned"], na.rm = T),
+                          returnRate = sum(orders[orderstatus == "returned"], na.rm = T)/
+                           sum(orders[orderstatus == "complete"], na.rm = T)),
                      by = .(monthName, month)]
+## clean up
 returnRate[, returnRate := round(returnRate,2)]
 summary(returnRate)
 
+## plot
 plot_ly(data = returnRate, 
         x = ~monthName, 
         y =  ~returnRate, 
         mode = 'lines', 
-        colors = "Set1",)
+        colors = "Set1")
 
 ```
 
 # Aggregation II
 
-As a gut check, I want to aggregate it in a different way. 
+As a gut check, I wanted to aggregate the data in a different way. I aggregated the data by the date of return, which shows the sheer volume of mattresses being sold and returned by month, regardless of their sale date. While I believed this calculation to be less valuable, I created it to rest assured. Again, we can see that, although the number of returns is rising, the rate is not as telling when ignoring the month in which the order was placed. 
 ```{r}
 returnsByMonth <- orders[, .(returns = sum(orders[orderstatus == "returned"], na.rm = T)),
-                         by = .(month(datereturned), monthName)]
+                         by = monthName]
 
 ordersByMonth <- orders[, .(orders = sum(orders[orderstatus == "complete"], na.rm = T)),
-                        by = .(month(dateordered), monthName)]
-
-setkey(returnsByMonth, month)
-setkey(ordersByMonth, month)
+                        by = monthName]
+## join
+setkey(returnsByMonth, monthName)
+setkey(ordersByMonth, monthName)
 returnsByMonth <- ordersByMonth[returnsByMonth]
-returnsByMonth[!is.na(month), returnRate := returns/orders, by = month]
-returnsByMonth <- returnsByMonth[!is.na(month)]
 
-returnsByMonth <- returnsByMonth[c(2:nrow(returnsByMonth), 1)]
+## clean up
+returnsByMonth[!is.na(monthName), returnRate := returns/orders, by = monthName]
+returnsByMonth <- returnsByMonth[c(1, 5, 4, 3, 2)]
 
+## plot
 plot_ly(returnsByMonth, x = ~monthName) %>%
   add_trace(y = ~orders, name = 'Orders',mode = 'lines') %>%
   add_trace(y = ~returns, name = 'Returns', mode = 'lines') 
 ```
 
-
-Plots
-```{r}
-```
-
-## Questions
-Exercise 1: Crunch the data and tell us whether our return rate is trending up or down. Additional insights are welcome, but not required
-We measure our metrics by month, so please provide the answer at a month (as opposed to week or day) level (e.g., return rate increased in September but decreased in October)
-
-Exercise 2: Write the SQL code to produce number of completed orders by date (name of source data table is 'casper_orders')
-
-
+# SQL Query
+Using a package in R, I created and ran a SQL query to get the number of completed orders by date. If the audience also wanted to see an aggregation by month, I would add either a `MONTH` or a `DATEPART` to the query.
 ```{r}
 casper_orders <- orders
-sqldf("select sum(orders) as totalOrders, dateordered from casper_orders where orderstatus = 'complete' group by dateordered;")
-sqldf("select sum(orders) as totalOrders, EXTRACT(month FROM dateordered) as month from casper_orders where orderstatus = 'complete' group by month;")
-sqldf("select substr(dateordered, 6, 7), dateordered from casper_orders limit 10;")
+
+sqldf("SELECT SUM(orders) as totalOrders, dateordered 
+      FROM casper_orders 
+      WHERE orderstatus = 'complete' 
+      GROUP BY dateordered;")
 ```
 

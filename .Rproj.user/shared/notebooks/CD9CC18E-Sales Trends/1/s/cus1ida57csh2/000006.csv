@@ -1,5 +1,11 @@
-"0","sapply(orders, class)
-"
+"0","orders <- data.table(read.xlsx2(file = ""XLS_takehome_NA.xlsx"", "
+"0","                                sheetName = ""Orders"","
+"0","                                stringsAsFactors = F,"
+"0","                                colClasses = c(""Date"", ""Date"", ""character"", ""numeric"")))"
+"0","orders <- orders[, 1:4][order(dateordered)]"
+"0","orders[, month := month(dateordered)]"
+"0","orders$monthName <- month.name[ orders$month]"
+"0","sapply(orders, class)"
 "1"," dateordered "
 "1","datereturned "
 "1"," orderstatus "
