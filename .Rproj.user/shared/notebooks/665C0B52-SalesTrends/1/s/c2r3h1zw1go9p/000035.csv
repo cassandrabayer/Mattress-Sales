@@ -1,0 +1,5 @@
+"0","casper_orders <- orders"
+"0","sqldf(""SELECT SUM(orders) as totalOrders, dateordered "
+"0","      FROM casper_orders "
+"0","      WHERE orderstatus = 'complete' "
+"0","      GROUP BY dateordered;"")"
